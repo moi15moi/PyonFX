@@ -24,6 +24,7 @@ meta, styles, lines = io.get_data()
 # Let's load the timestamps
 timestamps = FPSTimestamps(RoundingMethod.ROUND, Fraction(1000), Fraction(24000, 1001))
 
+
 def romaji(line, l):
     for syl in Utils.all_non_empty(line.syls):
         # Setting up a delay, which will be my time for the leadin and leadout effect

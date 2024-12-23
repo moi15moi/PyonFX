@@ -32,6 +32,7 @@ CU = ColorUtility(lines)
 # Let's load the timestamps
 timestamps = FPSTimestamps(RoundingMethod.ROUND, Fraction(1000), Fraction(24000, 1001))
 
+
 def romaji(line, l):
     # Setting up a delay, we will use it as duration time of the leadin and leadout effects
     delay = 300

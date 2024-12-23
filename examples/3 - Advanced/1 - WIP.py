@@ -11,6 +11,7 @@ circle = Shape.ellipse(20, 20)
 # Let's load the timestamps
 timestamps = FPSTimestamps(RoundingMethod.ROUND, Fraction(1000), Fraction(24000, 1001))
 
+
 def romaji(line, l):
     for syl in Utils.all_non_empty(line.syls):
         # Leadin Effect
