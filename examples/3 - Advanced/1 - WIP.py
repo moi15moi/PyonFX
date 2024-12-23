@@ -1,4 +1,6 @@
+from fractions import Fraction
 from pyonfx import *
+from video_timestamps import FPSTimestamps, RoundingMethod
 import random
 
 io = Ass("in.ass")
@@ -6,6 +8,8 @@ meta, styles, lines = io.get_data()
 
 circle = Shape.ellipse(20, 20)
 
+# Let's load the timestamps
+timestamps = FPSTimestamps(RoundingMethod.ROUND, Fraction(1000), Fraction(24000, 1001))
 
 def romaji(line, l):
     for syl in Utils.all_non_empty(line.syls):
@@ -29,7 +33,9 @@ def romaji(line, l):
         l.layer = 1
 
         FU = FrameUtility(
-            line.start_time + syl.start_time, line.start_time + syl.end_time
+            line.start_time + syl.start_time,
+            line.start_time + syl.end_time,
+            timestamps,
         )
         rand = random.uniform(-10, 10)
 
