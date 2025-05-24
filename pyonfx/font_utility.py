@@ -246,11 +246,14 @@ class Font:
 
                     last_type = base_type
 
-            curr_width = 0.0
+            if self.hspace:
+                curr_width = 0.0
+                for i, char in enumerate(text):
+                    shape_from_text(char, curr_width)
+                    curr_width += self.get_text_extents(char)[0]
+            else:
+                shape_from_text(text, 0.0)
 
-            for i, char in enumerate(text):
-                shape_from_text(char, curr_width)
-                curr_width += self.get_text_extents(char)[0]
 
             return Shape(" ".join(shape))
         elif sys.platform == "linux" or sys.platform == "darwin":
