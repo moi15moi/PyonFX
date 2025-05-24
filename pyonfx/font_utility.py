@@ -183,7 +183,7 @@ class Font:
             return (
                 (
                     width * self.downscale * self.fonthack_scale
-                    + self.hspace * (len(text) - 1)
+                    + self.hspace * len(text)
                 )
                 * self.xscale,
                 get_rect(text).height
@@ -330,7 +330,7 @@ class Font:
             curr_width = 0
 
             for i, char in enumerate(text):
-                shape_from_text(char, curr_width + self.hspace * self.xscale * i)
+                shape_from_text(char, curr_width)
                 curr_width += self.get_text_extents(char)[0]
 
             return Shape(" ".join(shape))
