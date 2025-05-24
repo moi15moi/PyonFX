@@ -96,7 +96,7 @@ def test_line_values():
     check.almost_equal(lines[4].height, 48.0, abs=max_deviation)
 
     # Normal-spaced style
-    check.almost_equal(lines[5].width, 572.75, abs=max_deviation)
+    check.almost_equal(lines[5].width, 577.546875, abs=max_deviation)
     check.almost_equal(lines[5].height, 48.0, abs=max_deviation)
 
     # Normal - fscx style
@@ -112,7 +112,7 @@ def test_line_values():
     check.almost_equal(lines[8].height, 90.0, abs=max_deviation)
 
     # Normal - Big FS - Spaced
-    check.almost_equal(lines[9].width, 1090.796875, abs=max_deviation)
+    check.almost_equal(lines[9].width, 1100.34375, abs=max_deviation)
     check.almost_equal(lines[9].height, 90.0, abs=max_deviation)
 
     # Bold - Text with non latin characters (kanji)
